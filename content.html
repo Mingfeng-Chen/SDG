@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo展示</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #510755;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            cursor: default; /* 默认光标样式 */
+            font-size: 16px; /* 字号 */
+            line-height: 1.6; /* 行高 */
+            color: #333; /* 字体颜色 */
+            /* background-color: #f9f9f9; 背景颜色 */
+            letter-spacing: 0.5px; /* 字距 */
+            margin-bottom: 10px; /* 段落间距 */
+            font-weight: bold; /* 加粗 */
+            font-style: italic; /* 斜体 */
+            text-align: center;
+        }
+
+        p.hover-pointer {
+            cursor: pointer; /* 手型光标样式 */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+        }
+
+        .audio-container {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>文言艺心Demo展示</h1>
+    </header>
+
+    <section>
+        <h2>题李凝幽居</h2>
+        <h3>唐·贾岛</h3>
+        <div class="audio-container">
+            <audio controls>
+              <source src="test.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+           
+        <p onclick="changePicture1(this)">闲居少邻并，草径入荒园。</p>
+        <!-- <button onclick="changePicture1(this)">动手生成专属图片</button> -->
+
+        <p onclick="changePicture2(this)">鸟宿池边树，僧敲月下门。</p>
+        <!-- <button onclick="changePicture2(this)">动手生成专属图片</button> -->
+
+        <p onclick="changePicture3(this)">过桥分野色，移石动云根。</p>
+
+        <p onclick="changePicture4(this)">暂去还来此，幽期不负言。</p>
+
+        <img src="https://via.placeholder.com/1024x1024" alt="示例图片">
+    </section>
+
+    <script>
+        var images = document.querySelectorAll('img');
+        var image0 = images[0];
+        function changePicture1(element) {
+            setTimeout(function() {
+                image0.src = "picture1.jpg";
+            }, 1000);
+        }
+        function changePicture2(element) {
+            setTimeout(function() {
+                image0.src = "picture2.jpg";
+            }, 1000);
+        }
+        function changePicture3(element) {
+            setTimeout(function() {
+                image0.src = "picture3.jpg";
+            }, 1000);
+        }
+        function changePicture4(element) {
+            setTimeout(function() {
+                image0.src = "picture4.jpg";
+            }, 1000);
+        }
+        const paragraphs = document.querySelectorAll('p');
+
+        // 遍历每个<p>标签并添加事件监听器
+        paragraphs.forEach(paragraph => {
+        // 添加鼠标悬停事件监听器
+        paragraph.addEventListener('mouseover', function() {
+            // 在悬停时添加类名以改变光标样式
+            this.classList.add('hover-pointer');
+        });
+
+        // 添加鼠标离开事件监听器
+        paragraph.addEventListener('mouseout', function() {
+            // 在鼠标离开时移除类名恢复默认光标样式
+            this.classList.remove('hover-pointer');
+        });
+        });
+    </script>
+</body>
+</html>
